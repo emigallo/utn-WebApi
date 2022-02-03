@@ -1,0 +1,31 @@
+﻿@page "/card"
+
+<link href="css/LoginCard.css" rel="stylesheet" type="text/css" />
+
+<p class="card">
+    <h3>@name (@id)</h3>
+    <h5>@email</h5>
+    <label>@date</label>
+</p>
+
+
+@code{
+
+    private int id;
+
+    private string name,
+            email;
+
+    private DateTime date;
+
+    [Parameter]
+    public Business.Models.LoginModel Model { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.id = this.Model.Id;
+        this.name = this.Model.Name;
+        this.email = this.Model.Email;
+        this.date = this.Model.Date;
+    }
+}

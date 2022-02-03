@@ -1,0 +1,41 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<Counter IncrementBy="3" />
+
+<div style="display:flex; flex-flow:wrap;">
+    @if (this._logins is not null)
+    {
+        foreach (var item in this._logins)
+        {
+            <LoginCard Model="@item" />
+        }
+    }
+</div>
+
+@code{
+
+    private List<Business.Models.LoginModel> _logins { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Connections.RestConnection rest = new Connections.RestConnection("http://localhost:55000");
+        try
+        {
+            Console.WriteLine("OnInitializedAsync");
+            this._logins = await rest.GetAsync<List<Business.Models.LoginModel>>("login");
+            Console.WriteLine("finish api call");
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
+    }
+}
