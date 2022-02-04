@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{1C6ECA02-0BB8-4DEC-8159-5A25EF049C65}|Default">
+  <MonoDevelop.Ide.ItemProperties.Clase8 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Index.razor">
+    <Files>
+      <File FileName="Pages/Index.razor" Line="37" Column="88" />
+      <File FileName="Pages/LoginCard.razor" Line="8" Column="7" />
+      <File FileName="Pages/FetchData.razor" />
+      <File FileName="Pages/LoginCard.razor.css" />
+      <File FileName="Pages/Index.razor.css" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Clase8" expanded="True">
+            <Node name="Clase8" expanded="True">
+              <Node name="Connections" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Index.razor" expanded="True" selected="True" />
+                <Node name="LoginCard.razor" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

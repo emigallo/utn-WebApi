@@ -8,7 +8,7 @@ namespace CalculatorWeb.Services
         }
 
         public double CalculateResult()
-        {
+        {            
             // Acá llamamos a la API
             return 123321;
         }

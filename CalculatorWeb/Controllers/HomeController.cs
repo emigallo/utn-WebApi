@@ -41,11 +41,26 @@ namespace CalculatorWeb.Controllers
 
         [HttpPost]
         [Route("Calc")]
-        public IActionResult Calc1(CalcViewModel model)
+        public IActionResult Calculate(CalcViewModel model, string input)
         {
             CalculateModelService service = new CalculateModelService();
 
-            model.Result = service.CalculateResult();
+            if (input == "=")
+            {
+                model.Result = service.CalculateResult();
+            }
+
+            if (input == "+")
+            {
+
+            }
+
+            int number;
+            if (int.TryParse(input, out number))
+            {
+
+            }
+
             return View("Calc", model);
         }
     }

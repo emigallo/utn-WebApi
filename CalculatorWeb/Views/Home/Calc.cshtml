@@ -11,14 +11,7 @@
                 {
                     @if (item != null)
                     {
-                        if (item == "=")
-                        {
-                            <button type="submit">=</button>
-                        }
-                        else
-                        {
-                            <button type="button" data-value="@item">@item</button>
-                        }
+                        <button type="submit" data-value="@item">@item</button>
                     }
                 }
             </div>
@@ -33,6 +26,5 @@
                     console.log(event.target.dataset.value);
                 });
             });
-
         });</script>
 }

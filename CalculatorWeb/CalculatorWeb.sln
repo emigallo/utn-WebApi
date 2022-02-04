@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.17
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorWeb", "CalculatorWeb.csproj", "{3B9FC436-88FB-43A9-8E8D-C0C0A70AFDE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorWeb", "CalculatorWeb.csproj", "{E526E1FE-1C95-444A-915F-4121905CA22A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3B9FC436-88FB-43A9-8E8D-C0C0A70AFDE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B9FC436-88FB-43A9-8E8D-C0C0A70AFDE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B9FC436-88FB-43A9-8E8D-C0C0A70AFDE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B9FC436-88FB-43A9-8E8D-C0C0A70AFDE6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AB45A3BF-0DF3-49A1-95D1-8F437D0879BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AB45A3BF-0DF3-49A1-95D1-8F437D0879BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB45A3BF-0DF3-49A1-95D1-8F437D0879BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB45A3BF-0DF3-49A1-95D1-8F437D0879BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E526E1FE-1C95-444A-915F-4121905CA22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E526E1FE-1C95-444A-915F-4121905CA22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E526E1FE-1C95-444A-915F-4121905CA22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E526E1FE-1C95-444A-915F-4121905CA22A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,27 @@
+﻿<div>
+    <h3>@name (@id)</h3>
+    <h4>@mail</h4>
+    <label>@date</label>
+</div>
+
+
+@code{
+    private string name,
+        mail;
+
+    private int id;
+    private DateTime date;
+
+    [Parameter]
+    public Business.Models.LoginModel Model { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        this.name = this.Model.Name;
+        this.mail = this.Model.Email;
+        this.id = this.Model.Id;
+        this.date = this.Model.Date;
+    }
+}

@@ -1,0 +1,14 @@
+﻿div {
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+}
+
+h4, label {
+    color: darkgrey;
+}
+
+h1 {
+    color: red;
+}
