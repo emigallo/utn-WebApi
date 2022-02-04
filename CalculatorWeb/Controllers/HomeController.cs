@@ -41,22 +41,22 @@ namespace CalculatorWeb.Controllers
 
         [HttpPost]
         [Route("Calc")]
-        public IActionResult Calculate(CalcViewModel model, string input)
+        public IActionResult Calculate(CalcViewModel model, string lastInput)
         {
             CalculateModelService service = new CalculateModelService();
 
-            if (input == "=")
+            if (lastInput == "=")
             {
                 model.Result = service.CalculateResult();
             }
 
-            if (input == "+")
+            if (lastInput == "+")
             {
 
             }
 
             int number;
-            if (int.TryParse(input, out number))
+            if (int.TryParse(lastInput, out number))
             {
 
             }

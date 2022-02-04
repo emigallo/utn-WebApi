@@ -16,6 +16,7 @@
                 }
             </div>
         }
+        <input style="visibility:hidden;" id="lastInput" name="lastInput" />
     </div>
 
     <script>window.addEventListener('load', (event) => {
@@ -23,7 +24,7 @@
             document.querySelectorAll('button').forEach(function (item) {
                 item.addEventListener('click', (event) => {
                     document.querySelector('#textLabel').innerHTML += event.target.dataset.value;
-                    console.log(event.target.dataset.value);
+                    document.querySelector('#lastInput').value = event.target.dataset.value;
                 });
             });
         });</script>
