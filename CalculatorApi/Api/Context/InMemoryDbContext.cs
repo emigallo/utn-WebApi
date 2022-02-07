@@ -33,6 +33,9 @@ namespace Api.Context
             this.Logins.Add(new LoginModel(9, "Martín", "Martín@mail.com", DateTime.Now));
             this.Logins.Add(new LoginModel(10, "Agustina", "Agustina@mail.com", DateTime.Now));
 
+            this.Users.Add(new UserModel("emi", "1234"));
+            this.Users.Add(new UserModel("juan", "4321"));
+
             return this.SaveChanges();
         }
 

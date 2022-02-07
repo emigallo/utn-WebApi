@@ -10,5 +10,6 @@ namespace Api.Context
         }
 
         public DbSet<LoginModel> Logins { get; set; }
+        public DbSet<UserModel> Users { get; set; }
     }
 }

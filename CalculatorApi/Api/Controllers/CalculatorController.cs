@@ -2,6 +2,7 @@
 using Api.DTOs;
 using Business.Models;
 using Business.Operations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -54,9 +55,10 @@ namespace Api.Controllers
             return string.Format("El resultado de la cuenta es: {0}", result);
         }
 
+        [Authorize]
         [HttpGet]
         [Route("history")]
-        public string DoHistory(OperationValueList operations)
+        public ActionResult DoHistory(OperationValueList operations)
         {
             CalculatorWithHistory calc = new CalculatorWithHistory();
             calc.Add(operations.Value);
@@ -69,7 +71,7 @@ namespace Api.Controllers
             }
 
             double result = calc.Do();
-            return string.Format("El resultado de la operación es: {0}", calc.GetInputs());
+            return Ok(result);
         }
 
         [HttpGet]
