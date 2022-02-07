@@ -25,6 +25,24 @@ namespace CalculatorWeb.Connections
             return JsonConvert.DeserializeObject<T>(json);
         }
 
+        public async Task<T> GetWithTokenAsync<T>(string partialUri)
+        {
+            string uri = this.GetUri(partialUri);
+
+            //if (tokeVencido)
+            //{
+            //    UpdateToken();
+            //}
+
+            //this._httpClient.DefaultRequestHeaders.Authorization
+            //    = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "token");
+
+            HttpResponseMessage response = await this._httpClient.GetAsync(uri);
+
+            string json = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<T>(json);
+        }
+
         public async Task<T> PostAsync<T, U>(string partialUri, U item)
         {
             string uri = this.GetUri(partialUri);

@@ -2,6 +2,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Api.Exceptions;
 using Business.Models;
 using Microsoft.IdentityModel.Tokens;
 
@@ -21,7 +22,7 @@ namespace Api.Auth
 
             if (user == null)
             {
-                throw new Exception("USER_NON_EXIST");
+                throw new UserInvalidException();
             }
 
             try
@@ -49,7 +50,8 @@ namespace Api.Auth
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddMinutes(this._expiresIn),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
+                    SecurityAlgorithms.HmacSha256Signature)
             };
 
             return tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));

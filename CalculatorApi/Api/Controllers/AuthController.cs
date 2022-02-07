@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Api.Auth;
 using Api.Context;
+using Api.Exceptions;
 using Business.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,22 +22,28 @@ namespace Api.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("Token")]
+        [HttpGet("token")]
         public async Task<IActionResult> Authenticate(string userName, string password)
         {
             try
             {
-                UserModel user = await this._context.Users.FirstOrDefaultAsync(x => x.UserName == userName && x.Password == password);
+                // Traemos el usuario desde cualquier origen
+                UserModel user = await this._context.Users
+                    .FirstOrDefaultAsync(x => x.UserName == userName && x.Password == password);
+
                 AuthResponse response = new AuthManager().Auth(user);
                 return Ok(response);
             }
+            catch (UserNonExistException ex)
+            {
+                return Ok(ex.MessageToShow + " " + userName);
+            }
+            catch (UserInvalidException ex)
+            {
+                return Ok(ex.MessageToShow);
+            }
             catch (Exception ex)
             {
-                if (ex.Message == "USER_NON_EXIST")
-                {
-                    return Ok("Usuario o contraseña inexistente.");
-                }
-
                 if (ex.Message == "INVALID_TOKEN_REQUEST")
                 {
                     return Unauthorized();

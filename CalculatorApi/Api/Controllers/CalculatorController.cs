@@ -74,6 +74,7 @@ namespace Api.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpGet]
         [Route("test")]
         public ActionResult GetJson()

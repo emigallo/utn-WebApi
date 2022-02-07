@@ -26,12 +26,9 @@ namespace Api
         {
             services.AddControllers();
 
-            var options = new DbContextOptionsBuilder<BaseCalculatorDbContext>()
-                .UseInMemoryDatabase(databaseName: "CalculatorDatabase")
-                .Options;
 
             services.AddSingleton<BaseCalculatorDbContext>(x => InMemoryDbContext.Build());
-
+            
             // Token
             services.AddScoped<IAuthManager, AuthManager>();
             this.ConfigureToken(services);
