@@ -22,11 +22,11 @@ namespace Api.Controllers
 
         [AllowAnonymous]
         [HttpGet("Token")]
-        public async Task<IActionResult> Authenticate([FromBody] AuthRequest request)
+        public async Task<IActionResult> Authenticate(string userName, string password)
         {
             try
             {
-                UserModel user = await this._context.Users.FirstOrDefaultAsync(x => x.UserName == request.username);
+                UserModel user = await this._context.Users.FirstOrDefaultAsync(x => x.UserName == userName && x.Password == password);
                 AuthResponse response = new AuthManager().Auth(user);
                 return Ok(response);
             }
@@ -34,7 +34,7 @@ namespace Api.Controllers
             {
                 if (ex.Message == "USER_NON_EXIST")
                 {
-                    return Ok("El usuario no existe en el sistema.");
+                    return Ok("Usuario o contraseña inexistente.");
                 }
 
                 if (ex.Message == "INVALID_TOKEN_REQUEST")
